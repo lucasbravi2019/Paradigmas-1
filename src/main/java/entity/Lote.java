@@ -76,6 +76,12 @@ public class Lote {
         return avaluoxmt * superficie;
     }
 
+    public Edificio construir() {
+        Edificio edificio = Edificio.builder().avaluoXmt(this.avaluoxmt).build();
+        this.construccion = edificio;
+        return edificio;
+    }
+
     @Override
     public String toString() {
         return "Lote{" +

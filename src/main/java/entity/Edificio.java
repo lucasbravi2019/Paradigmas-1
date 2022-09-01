@@ -3,6 +3,9 @@ package entity;
 public class Edificio {
     private float avaluoxmt;
 
+    public Edificio() {
+    }
+
     public Edificio(float avaluoxmt) {
         this.avaluoxmt = avaluoxmt;
     }
@@ -15,12 +18,14 @@ public class Edificio {
         this.avaluoxmt = avaluoxmt;
     }
 
-    public void valuar() {
-
+    //No se especifica que debe hacer este metodo
+    public float valuar(Integer superficie) {
+        return avaluoxmt * superficie;
     }
 
-    public void demoler() {
-
+    //No se especifica que debe hacer este metodo
+    public Edificio demoler() {
+        return null;
     }
 
     @Override
@@ -28,5 +33,26 @@ public class Edificio {
         return "Edificio{" +
                 "avaluoxmt=" + avaluoxmt +
                 '}';
+    }
+
+    public static EdificioBuilder builder() {
+        return new EdificioBuilder();
+    }
+
+    public static class EdificioBuilder {
+        private Edificio edificio;
+
+        public EdificioBuilder() {
+            this.edificio = new Edificio();
+        }
+
+        public EdificioBuilder avaluoXmt(float avaluo) {
+            this.edificio.setAvaluoxmt(avaluo);
+            return this;
+        }
+
+        public Edificio build() {
+            return this.edificio;
+        }
     }
 }

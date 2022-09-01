@@ -67,7 +67,7 @@ public class Registro {
 
     public void valuar(Lote lote) {
         System.out.printf("El lote a valuar es: %s%n", lote.getIdPadron());
-        System.out.printf("El valor del lote es de: %s%n", lote.valuar());
+        System.out.printf("El valor del lote es de: $ %.2f%n", lote.valuar());
     }
 
     public void registrar(Lote lote) {
